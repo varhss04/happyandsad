@@ -39,7 +39,7 @@
             margin-top: 20px;
         }
         .face-container img {
-            width: 170px;
+            width: 150px;
             transition: transform 0.3s ease-in-out;
         }
         .heart {
@@ -59,7 +59,7 @@
     <h1>Click a word to see the reaction!</h1>
     <div class="words-container" id="wordsContainer"></div>
     <div class="face-container">
-        <img id="faceImage" src="images/sadface.png" alt="Face">
+        <img id="faceImage" src="sadface.png" alt="Sad Face">
     </div>
     
     <script>
@@ -78,13 +78,15 @@
             wordBox.textContent = word;
             wordBox.addEventListener("click", () => {
                 if (happyWords.has(word)) {
-                    faceImage.src = "images/happyface.png";
-                    faceImage.style.transform = "scale(1.2)";
+                    faceImage.src = "happyface.png";
+                    faceImage.alt = "Happy Face";
+                    faceImage.style.transform = "scale(1.1)";
                     if (word === "varsha") {
                         createHearts();
                     }
                 } else {
-                    faceImage.src = "images/sadface.png";
+                    faceImage.src = "sadface.png";
+                    faceImage.alt = "Sad Face";
                     faceImage.style.transform = "scale(1)";
                 }
             });
